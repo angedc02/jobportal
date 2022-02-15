@@ -462,5 +462,5 @@ def contact(request):
     return render(request, 'contact.html')
 
 def footer(request):
-    return render(request, 'footer.html')
+    return render(request, 'contact.html')
 
