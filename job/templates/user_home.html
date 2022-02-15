@@ -2,8 +2,21 @@
 {% block body %}
 {% include 'user_navigation.html' %}
 
-<div class="container" style="padding: 2rem 0;">
-    <div class="row">
+<style>
+    body{
+      background-color: #F5F8FA;
+    }
+    .info-row{
+      margin-bottom: 2rem;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 0.7rem;
+      padding: 1rem 0;
+    }
+</style>
+
+<body>
+    <div class="container" style="margin: max(15vh, 4rem) auto;">
+    <div class="row info-row" style="background: #fff;">
         <div class="col-sm-6">
             <form class="container mt-5" name="signup" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
@@ -78,6 +91,7 @@
         </div>
     </div>
 </div>
+</body>
 {% include 'footer.html' %}
 {% if error == "no" %}
 <script>
