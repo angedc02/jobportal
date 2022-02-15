@@ -1,0 +1,56 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: #F5F8FA;
+}
+.our-placed-students{
+  padding: 3rem 0 6rem 0;
+  background-color: #12171d; /* background */
+}
+.our-placed-students h1{
+  padding-bottom: 3rem;
+}
+.card-title{
+  text-align: center;
+  color: #fff;
+}
+.card-text{
+  color: #AAB8C2;
+}
+.bg-dark-custom-surface{
+  background: #18202b; /* surface */
+  padding: 0;
+}
+.card{
+  border-radius: 0;
+  border: none;
+}
+.card img{
+  border-radius: 0.7rem 0.7rem 0 0 !important;
+}
+.row{
+  gap: 1rem;
+  box-sizing: border-box;
+}
+.our-placed-students .row>div{
+  width: 30%;
+}
+.row{
+  justify-content: center;
+}
+.rounded{
+  border-radius:0.7rem !important;
+}
+@media only screen and (max-width: 800px) {
+  .our-placed-students .row>div{
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .our-placed-students .row>div{
+    width: 90%;
+  }
+}

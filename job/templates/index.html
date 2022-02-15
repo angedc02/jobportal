@@ -4,88 +4,74 @@
 {% block body %}
 
 {% include 'navigation.html' %}
+<link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
-<style>
-    .container{
-    max-width: 90%;
-    }
-
-    .content{
-    text-align: center;
-    position: absolute;
-    bottom: 0;
-    background: rgba(0,0,0,0.5);
-    color: white;
-    height:30px;
-    width:91%;
-    }
-</style>
 <div class="container-fluid" style="margin-top:1">
     <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="height:450px; width:100%" >
 </div>
 
-<div class="container"style="background-color: black; height: 570px; margin-top: 2%">
-<h1 class="text-center text-white">----------| OUR PLACED STUDENTS |----------</h1>
-    
-    <div class="row mt-3">
-        <div class="col-md-3">
-            <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="width:100%; margin-top:5%; height: 200px; border-radius:50%">
-            <div class="content">
-              <p>Facebook</p>
+
+<section class="our-placed-students">
+   <div class="container">
+    <h1 class="text-center text-white">Our Placed Students</h1>
+
+    <div class="row">
+        <div class="mb-0.5 bg-dark-custom-surface rounded">
+            <div class="card text-center">
+                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Facebook</h5>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="width:100%; margin-top:5%; height: 200px; border-radius:50%">
-            <div class="content">
-              <p>Twitter</p>
+        <div class="mb-0.5 bg-dark-custom-surface rounded">
+            <div class="card text-center">
+                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Twitter</h5>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="width:100%; margin-top:5%; height: 200px; border-radius:50%">
-            <div class="content">
-              <p>Amazon</p>
+        <div class="mb-0.5 bg-dark-custom-surface rounded">
+            <div class="card text-center">
+                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Amazon</h5>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="width:100%; margin-top:5%; height: 200px; border-radius:50%">
-            <div class="content">
-              <p>Google</p>
+        <div class="mb-0.5 bg-dark-custom-surface rounded">
+            <div class="card text-center">
+                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
             </div>
-        </div>
-    </div>
-
-    <div class="row mt-3">
-        <div class="col-md-3">
-            <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="width:100%; margin-top:5%; height: 200px; border-radius:50%">
-            <div class="content">
-              <p>Infosys</p>
+            <div class="card-body">
+                <h5 class="card-title">Netflix</h5>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="width:100%; margin-top:5%; height: 200px; border-radius:50%">
-            <div class="content">
-              <p>Canva</p>
+        <div class="mb-0.5 bg-dark-custom-surface rounded">
+            <div class="card text-center">
+                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Microsoft</h5>
             </div>
         </div>
 
-        <div class="col-md-3">
-            <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="width:100%; margin-top:5%; height: 200px; border-radius:50%">
-            <div class="content">
-              <p>HCL</p>
+        <div class="mb-0.5 bg-dark-custom-surface rounded">
+            <div class="card text-center">
+                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
             </div>
-        </div>
-
-        <div class="col-md-3">
-            <img src="{% static 'images/LEARNING IS FUN app.png' %}" style="width:100%; margin-top:5%; height: 200px; border-radius:50%">
-            <div class="content">
-              <p>Microsoft</p>
+            <div class="card-body">
+                <h5 class="card-title">Accenture</h5>
             </div>
         </div>
     </div>
 </div>
+</section>
+
 {% include 'footer.html' %}
 {% endblock %}
