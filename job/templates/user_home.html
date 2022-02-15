@@ -1,13 +1,10 @@
 {% load static %}
-
 {% block body %}
-
 {% include 'user_navigation.html' %}
 
-<div class="container">
+<div class="container" style="padding: 2rem 0;">
     <div class="row">
         <div class="col-sm-6">
-
             <form class="container mt-5" name="signup" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
@@ -36,7 +33,6 @@
                         <input type="text" class="form-control" name="email" value="{{student.user.username}}" readonly required>
                     </div>
                 </div>
-
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -67,26 +63,22 @@
                             </div>
                         {% endif %}
                     </div>
-
                     <div class="form-group col-md-6">
                         <label>Image</label>
                         <input type="file" class="form-control" name="image" accept="image/*">
                     </div>
                 </div>
-
-                <input type="submit" value="Submit" class="btn btn-primary my-3" style="width: 200px; ">
-
+                <input type="submit" value="Submit" class="btn my-3" style="background-color: #1DA1F2; color: #fff;">
             </form>
-        </div><!--col 1 end-->
-
-            <div class="col-sm-4 mt-5 text-center">
-                <img src="{{student.image.url}}" width="300px" height="300px">
+        </div>
+        <div class="col-sm-4 mt-5 text-center">
+            <div style="width: 100px; height: 100px;">
+                <img src="{{student.image.url}}" style="object-fit: cover; width: 100%; height: 100%; object-position: center; border-radius: 0.3rem;">
             </div>
-
+        </div>
     </div>
 </div>
 {% include 'footer.html' %}
-
 {% if error == "no" %}
 <script>
     alert("Profile Updated Successfully");
@@ -99,5 +91,4 @@
     alert("Something went wrong, Try Again...");
 </script>
 {% endif %}
-
 {% endblock %}
