@@ -4,21 +4,31 @@
 
 {% include 'navigation.html' %}
 
-<marquee style="font-family: 'Monotype Corsiva'; font-size:25px; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%">
-    Recruiter Login
-</marquee>
-<hr>
-<form class="container mt-5" method="post">
-    {% csrf_token %}
-    <label><b>Email ID</b></label>
-    <input type="text" class="form-control" name="uname" placeholder="Enter Email ID">
 
-    <label><b>Password</b></label>
-    <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
+<div class="col-lg-6 offset-3" style="display:flex; justify-content:center;">
+    <div class="box" style="margin-top:20px; margin-right:20px; border-radius:10px;
+            width:550px; box-shadow: 5px 10px;
+            background-color: #1da1f2;"
+    >
+        <form class="container mt-5" method="post">
+            <h2 style=" text-align: center;
+                color: whitesmoke;">Recruiter Login</h2>
 
-    <input type="submit" class="btn btn-primary" style="margin-top: 2%; color:darkcyan; background-color: black; height: 40px;">
-    <a href="{% url 'recruiter_signup'%}" class="btn btn-primary" style="margin-top: 2%; color:darkcyan; background-color: black; height: 40px;">CREATE AN ACCOUNT</a>
-</form>
+            {% csrf_token %}
+            <label><b>Email ID</b></label>
+            <input type="text" class="form-control" name="uname" placeholder="Enter Email ID">
+
+            <label><b>Password</b></label>
+            <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
+
+            <input type="submit" class="btn btn-primary" style="margin-top: 2%; color:white; background-color: black; height: 40px; margin-bottom: 30px;">
+            <a href="{% url 'recruiter_signup'%}" class="btn btn-primary" style="margin-top: 2%; color:white; background-color: black; height: 40px; margin-bottom: 30px;">CREATE AN ACCOUNT</a>
+        </form>
+
+    </div>
+</div>
+
+
 
 {% if error == "no" %}
 <script>
