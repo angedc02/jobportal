@@ -423,3 +423,6 @@ def job_detail(request, pid):
     job = Job.objects.get(id=pid)
     d = {'job': job}
     return render(request, 'job_detail.html', d)
+
+def footer(request):
+    return render(request, 'footer.html')
