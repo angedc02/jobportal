@@ -3,7 +3,7 @@
 {% block body %}
 
 {% include 'navigation.html' %}
-
+<link rel="stylesheet" type="text/css" href="{% static 'style/user_signup.css' %}">
 <script>
     function checkpass(){
         if(document.signup.pwd.value != document.signup.cpwd.value){
@@ -14,52 +14,52 @@
         return true;
     }
 </script>
-
 <form class="container mt-5" onsubmit="return checkpass();" name="signup" method="post" enctype="multipart/form-data">
     {% csrf_token %}
-
-    <div class="form-row">
+<div class="laman container mt-5">
+    <h1>Sign up here!</h1>
+    <div class="all form-row">
         <div class="form-group col-md-6">
-            <label>First Name</label>
-            <input type="text" class="form-control" name="fname" placeholder="Enter First Name" required>
+<!--            <label>First Name</label>-->
+            <input type="text" class="form-control" name="fname" placeholder="First Name" required>
         </div>
 
         <div class="form-group col-md-6">
-            <label>Last Name</label>
-            <input type="text" class="form-control" name="lname" placeholder="Enter Last Name" required>
+<!--            <label>Last Name</label>-->
+            <input type="text" class="form-control" name="lname" placeholder="Last Name" required>
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-12">
-            <label>Contact</label>
-            <input type="text" class="form-control" name="contact" placeholder="Enter Contact Number" required>
+<!--            <label>Contact</label>-->
+            <input type="text" class="form-control" name="contact" placeholder="Contact Number" required>
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-12">
-            <label>Email ID</label>
-            <input type="text" class="form-control" name="email" placeholder="Enter Email Address" required>
+<!--            <label>Email ID</label>-->
+            <input type="text" class="form-control" name="email" placeholder="Email Address" required>
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-6">
-            <label>Password</label>
-            <input type="password" class="form-control" name="pwd" placeholder="Enter Password" required>
+<!--            <label>Password</label>-->
+            <input type="password" class="form-control" name="pwd" placeholder="Password" required>
         </div>
 
         <div class="form-group col-md-6">
-            <label>Confirm Password</label>
-            <input type="password" class="form-control" name="cpwd" placeholder="Enter Password Again" required>
+<!--            <label>Confirm Password</label>-->
+            <input type="password" class="form-control" name="cpwd" placeholder="Confirm Password" required>
         </div>
     </div>
 
     <div class="form-row">
         <div class="form-group col-md-6">
             <label>Gender</label>
-            <div style="border:1px solid lightgrey; padding: 5px; border-radius: 6px">
+            <div style="padding: 5px; margin-left:30px">
                 <div class="custom-control custom-radio custom-control-inline">
                     <input type="radio" id="customRadioInline1" name="gender" class="custom-control-input" value="Male">
                     <label class="custom-control-label" for="customRadioInline1">Male</label>
@@ -73,15 +73,20 @@
         </div>
 
         <div class="form-group col-md-6">
-            <label>Image</label>
-            <input type="file" class="form-control" name="image" required>
+            <label>Profile Picture</label>
+            <input type="file" class="noborder form-control" name="image" required>
         </div>
     </div>
 
-    <input type="submit" value="Submit" class="btn btn-primary my-3" style="width: 200px; ">
+    <div class="center">
+        <input type="submit" value="Submit" class="submit btn btn-primary my-3" >
+    </div>
+
+</div>
+
+
 
 </form>
-
 {% if error == "no" %}
 <script>
     alert("Signup Successful");
