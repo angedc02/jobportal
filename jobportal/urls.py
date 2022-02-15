@@ -49,5 +49,8 @@ urlpatterns = [
     path('latest_jobs', latest_jobs, name="latest_jobs"),
     path('user_latestjobs', user_latestjobs, name="user_latestjobs"),
     path('job_detail/<int:pid>', job_detail, name="job_detail"),
+    path('applyforjob/<int:pid>', applyforjob, name="applyforjob"),
+    path('applied_candidatelist', applied_candidatelist, name="applied_candidatelist"),
+    path('contact', contact, name="contact"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

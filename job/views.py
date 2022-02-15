@@ -6,7 +6,9 @@ from datetime import date
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    job = Job.objects.all().order_by('-start_date')
+    d = {'job': job}
+    return render(request, 'index.html', d)
 
 def admin_login(request):
     error = ""
@@ -124,7 +126,10 @@ def user_home(request):
 def admin_home(request):
     if not request.user.is_authenticated:
         return redirect('admin_login')
-    return render(request, 'admin_home.html')
+    rcount = Recruiter.objects.all().count
+    scount = StudentUser.objects.all().count
+    d = {'rcount': rcount, 'scount': scount}
+    return render(request, 'admin_home.html', d)
 
 def recruiter_home(request):
     if not request.user.is_authenticated:
@@ -423,3 +428,35 @@ def job_detail(request, pid):
     job = Job.objects.get(id=pid)
     d = {'job': job}
     return render(request, 'job_detail.html', d)
+
+def applyforjob(request, pid):
+    if not request.user.is_authenticated:
+        return redirect('user_login')
+    error = ""
+    user = request.user
+    student = StudentUser.objects.get(user=user)
+    job = Job.objects.get(id=pid)
+    date1 = date.today()
+    if job.end_date < date1:
+        error = "close"
+    elif job.start_date > date1:
+        error = "notopen"
+    else:
+        if request.method=='POST':
+            r = request.FILES['resume']
+            Apply.objects.create(job=job, student=student, resume=r, applydate=date.today())
+            error="done"
+    d = {'error': error}
+    return render(request, 'applyforjob.html', d)
+
+def applied_candidatelist(request):
+    if not request.user.is_authenticated:
+        return redirect('recruiter_login')
+
+    data = Apply.objects.all()
+
+    d = {'data': data}
+    return render(request, 'applied_candidatelist.html', d)
+
+def contact(request):
+    return render(request, 'contact.html')
