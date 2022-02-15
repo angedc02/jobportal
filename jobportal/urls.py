@@ -49,5 +49,6 @@ urlpatterns = [
     path('latest_jobs', latest_jobs, name="latest_jobs"),
     path('user_latestjobs', user_latestjobs, name="user_latestjobs"),
     path('job_detail/<int:pid>', job_detail, name="job_detail"),
+    path('footer', footer, name="footer"),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
