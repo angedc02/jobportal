@@ -15,10 +15,6 @@
     }
 </script>
 
-<marquee style="font-family: 'Monotype Corsiva'; font-size:25px; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%">
-    Recruiter Signup
-</marquee>
-<hr>
 <form class="container mt-5" onsubmit="return checkpass();" name="signup" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
@@ -90,8 +86,6 @@
     <input type="submit" value="Submit" class="btn btn-primary my-3" style="width: 200px; ">
 
 </form>
-
-{% include 'footer.html' %}
 
 {% if error == "no" %}
 <script>
