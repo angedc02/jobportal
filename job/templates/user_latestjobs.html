@@ -8,14 +8,10 @@
     tr{text-align: center}
 </style>
 
-<marquee style="font-family: 'Monotype Corsiva'; font-size:25px; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%">
-    Latest Job List
-</marquee>
-<hr>
-<div class="container">
+<div class="container" style="margin: 2rem auto;">
     <table class="table table-hover" id="example">
         <thead>
-        <tr style="background-color: #000080; color: white">
+        <tr style="background-color: #343a40; color: white">
             <th>S.No.</th>
             <th>Company Name</th>
             <th>Job Title</th>
@@ -25,10 +21,9 @@
             <th>Action</th>
         </tr>
         </thead>
-
         <tbody>
         {% for i in job %}
-        <tr style="background-color: #DEB887">
+        <tr style="background-color: #fff">
             <td>{{forloop.counter}}</td>
             <td>{{i.recruiter.company}}</td>
             <td>{{i.title}}</td>
@@ -43,9 +38,7 @@
             {% endif %}
         </tr>
         {% endfor %}
-
         </tbody>
-
     </table>
 </div>
 {% endblock %}
