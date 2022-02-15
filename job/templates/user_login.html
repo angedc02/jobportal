@@ -11,12 +11,10 @@
 
 <div class="col-lg-6 offset-3" style="display:flex; justify-content:center;">
     <div class="box" style="margin-top:20px; margin-right:20px; border-radius:10px; 
-            width:550px; box-shadow: 5px 10px;
-            background-color: #1da1f2;"
+            width:550px; box-shadow: 5px 10px;"
     >
         <form class="container mt-5" method="post">
-            <h2 style=" text-align: center;
-                color: whitesmoke;">User Login</h2>
+            <h2 style=" text-align: center;">User Login</h2>
             {% csrf_token %}
             <label><b>Email ID</b></label>
             <input type="email" class="form-control" name="uname" placeholder="Enter Email ID">
@@ -24,8 +22,8 @@
             <label><b>Password</b></label>
             <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
 
-            <input type="submit" value="Login" class="btn btn-primary" style="margin-top: 2%; color:white; background-color: black; height: 40px; margin-bottom: 30px;">
-            <a href="{% url 'user_signup'%}" class="btn btn-primary" style="margin-top: 2%; color:white; background-color: black; height: 40px;  margin-bottom: 30px;">CREATE AN ACCOUNT</a>
+            <input type="submit" value="Login" class="btn btn-primary" style="margin-top: 2%; color:white; background-color: black; height: 40px; margin-bottom: 30px; border-style: none; ">
+            <a href="{% url 'user_signup'%}" class="btn btn-primary" style="margin-top: 2%; color:white; background-color: black; height: 40px;  margin-bottom: 30px; border-style: none;">CREATE AN ACCOUNT</a>
         </form>
 
     </div>
