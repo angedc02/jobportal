@@ -32,9 +32,10 @@
 
                 <label><b>Password</b></label>
                 <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
-
-                <input type="submit" value="Login" class="btn btn-primary">
-                <a href="{% url 'user_signup'%}" class="btn btn-primary">CREATE AN ACCOUNT</a>
+                <div style="display: flex; justify-content: end; gap: 1rem;">
+                    <input type="submit" value="Login" class="btn btn-primary">
+                    <a href="{% url 'user_signup'%}" class="btn btn-primary">CREATE AN ACCOUNT</a>
+                </div>
             </form>
         </div>
     </div>
