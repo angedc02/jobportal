@@ -460,3 +460,7 @@ def applied_candidatelist(request):
 
 def contact(request):
     return render(request, 'contact.html')
+
+def footer(request):
+    return render(request, 'footer.html')
+

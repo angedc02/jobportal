@@ -52,5 +52,7 @@ urlpatterns = [
     path('applyforjob/<int:pid>', applyforjob, name="applyforjob"),
     path('applied_candidatelist', applied_candidatelist, name="applied_candidatelist"),
     path('contact', contact, name="contact"),
+    path('footer', footer, name="footer"),
+
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
