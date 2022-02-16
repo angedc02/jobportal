@@ -1,94 +1,89 @@
-{% load static %}
-
-
-{% block body %}
-
-{% include 'navigation.html' %}
+{% load static %} {% block body %} {% include 'navigation.html' %}
 
 <style>
-    *{
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body{
-      background-color: #F5F8FA;
-    }
-    .our-placed-students{
-      padding: 3rem 0 6rem 0;
-    }
-    .our-placed-students h2{
-      padding-bottom: 3rem;
-    }
-    .card-title{
-      text-align: center;
-      text-transform: uppercase;
-      font-weight: 800;
-      cursor: pointer;
-      transition: color 300ms ease;
-    }
-    .card-title:hover{
-      color: #1DA1F2;
-    }
-    .card-details{
-      color: rgb(33, 37, 41);
-      line-height: 1.2;
-      text-align: center;
-    }
-    .bg-dark-custom-surface{
-      background: #fff; /* surface */
-      padding: 0;
-      border: 1px solid #343a40;
-    }
-    .card{
-      border-radius: 0;
-      border: none;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .row{
-      gap: 1rem;
-      box-sizing: border-box;
-    }
-    .our-placed-students .row>div{
-      width: 30%;
-    }
-    .row{
-      justify-content: center;
-    }
-    @media only screen and (max-width: 800px) {
-      .our-placed-students .row>div{
-        width: 90%;
+      *{
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
       }
-    }
-    .table-container{
-      padding: 4rem 0;
-    }
-    .card-location{
-      text-align: center;
-    }
-    .badge{
-      background-color: #1DA1F2;
-      color: #fff;
-      text-transform: uppercase;
-    }
-    .fa-map-marker{
-      color: #F41F4E;
-    }
-    .card:hover img{
-      transition: transform 1.5s ease;
-    }
-    .card:hover img{
-      transform: scale(1.5);
-    }
-}
+      body{
+        background-color: #F5F8FA;
+      }
+      .our-placed-students{
+        padding: 3rem 0 6rem 0;
+      }
+      .our-placed-students h2{
+        padding-bottom: 3rem;
+      }
+      .card-title{
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 800;
+        cursor: pointer;
+        transition: color 300ms ease;
+      }
+      .card-title:hover{
+        color: #1DA1F2;
+      }
+      .card-details{
+        color: rgb(33, 37, 41);
+        line-height: 1.2;
+        text-align: center;
+      }
+      .bg-dark-custom-surface{
+        background: #fff; /* surface */
+        padding: 0;
+        border: 1px solid #343a40;
+      }
+      .card{
+        border-radius: 0;
+        border: none;
+        overflow: hidden;
+        cursor: pointer;
+      }
+      .row{
+        gap: 1rem;
+        box-sizing: border-box;
+      }
+      .our-placed-students .row>div{
+        width: 30%;
+      }
+      .row{
+        justify-content: center;
+      }
+      @media only screen and (max-width: 800px) {
+        .our-placed-students .row>div{
+          width: 90%;
+        }
+      }
+      .table-container{
+        padding: 4rem 0;
+      }
+      .card-location{
+        text-align: center;
+      }
+      .badge{
+        background-color: #1DA1F2;
+        color: #fff;
+        text-transform: uppercase;
+      }
+      .fa-map-marker{
+        color: #F41F4E;
+      }
+      .card:hover img{
+        transition: transform 1.5s ease;
+      }
+      .card:hover img{
+        transform: scale(1.5);
+      }
+  }
 </style>
 
 <!--datatable start-->
 <script>
-    $(document).ready(function() {
-    $('#example').DataTable();
-    } );
+  $(document).ready(function () {
+    $("#example").DataTable();
+  });
 </script>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
@@ -97,66 +92,74 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
-<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
-<link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+<link
+  rel="stylesheet"
+  href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css"
+/>
+<link
+  rel="stylesheet"
+  href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"
+/>
 <!--datatable end-->
 
 <div class="container table-container">
-    <table class="table table-hover" id="example">
-        <thead>
-        <tr style="background-color: #343a40; color: white">
-            <th>S.No.</th>
-            <th>Company Name</th>
-            <th>Job Title</th>
-            <th>Location</th>
-            <th>Start Date</th>
-            <th>End Date</th>
-            <th>Action</th>
-        </tr>
-        </thead>
+  <table class="table table-hover" id="example">
+    <thead>
+      <tr style="background-color: #343a40; color: white">
+        <th>S.No.</th>
+        <th>Company Name</th>
+        <th>Job Title</th>
+        <th>Location</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
 
-        <tbody>
-        {% for i in job %}
-        <tr style="background-color: #fff;">
-            <td>{{forloop.counter}}</td>
-            <td>{{i.recruiter.company}}</td>
-            <td>{{i.title}}</td>
-            <td>{{i.location}}</td>
-            <td>{{i.start_date}}</td>
-            <td>{{i.end_date}}</td>
-            <td><a href="{% url 'user_login'%}" class="btn btn-success btn-sm">Login to Apply</a></td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <tbody>
+      {% for i in job %}
+      <tr style="background-color: #fff">
+        <td>{{forloop.counter}}</td>
+        <td>{{i.recruiter.company}}</td>
+        <td>{{i.title}}</td>
+        <td>{{i.location}}</td>
+        <td>{{i.start_date}}</td>
+        <td>{{i.end_date}}</td>
+        <td>
+          <a href="{% url 'user_login'%}" class="btn btn-success btn-sm"
+            >Login to Apply</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
 </div>
 
 <section class="our-placed-students">
-   <div class="container">
+  <div class="container">
     <h2 class="text-center">Featured Jobs</h2>
-
     <div class="row">
-        <div class="mb-0.5 bg-dark-custom-surface">
-            <div class="card text-center">
-                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Senior Programmer</h6>
-                <p class="card-location">
-                    <i class="fa fa-map-marker job__location"></i>
-                    Job Location
-                    <span class="badge featured-badge">Full time</span>
-                </p>
-                <p class="card-details">
-                    We're looking for programmers who have a lot of experience and can own particular aspects of the
-                    tech or game. In many cases companies will have 2 streams for programmers as they advance in
-                    experience – one which is more managerial, the other which is more for specialists / experts who
-                    are interested in being technical gurus more so than managers.
-                </p>
-            </div>
+      {% for i in job %}
+      <div class="mb-0.5 bg-dark-custom-surface">
+        <div class="card text-center">
+          <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid" />
         </div>
+        <div class="card-body">
+          <h6 class="card-title">{{i.title}}</h6>
+          <p class="card-location">
+            <i class="fa fa-map-marker job__location"></i>
+            {{i.location}}
+            <span class="badge featured-badge">Full time</span>
+          </p>
+          <p class="card-details">
+            {{ i.description }}
+          </p>
+        </div>
+      </div>
+      {% endfor %}
 
-        <div class="mb-0.5 bg-dark-custom-surface">
+      <!-- <div class="mb-0.5 bg-dark-custom-surface">
             <div class="card text-center">
                 <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
             </div>
@@ -194,69 +197,8 @@
                     create tools, pipeline and efficiencies as they relate to moving objects on the screen.
                 </p>
             </div>
-        </div>
-
-        <div class="mb-0.5 bg-dark-custom-surface">
-            <div class="card text-center">
-                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">A.I Programmer</h6>
-                <p class="card-location">
-                    <i class="fa fa-map-marker job__location"></i>
-                    Job Location
-                    <span class="badge featured-badge">Full time</span>
-                </p>
-                <p class="card-details">
-                    The A.I. (Artificial Intelligence) Programmer is responsible for bringing the world’s characters
-                    / NPCs / enemies / moving objects to life in line with how the Designers wish these things to
-                    behave. They create the often complex rules and exceptions that tells things what to do in each
-                    and every scenario encountered in the game.
-                </p>
-            </div>
-        </div>
-
-        <div class="mb-0.5 bg-dark-custom-surface">
-            <div class="card text-center">
-                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Physics Programmer</h6>
-                <p class="card-location">
-                    <i class="fa fa-map-marker job__location"></i>
-                    Job Location
-                    <span class="badge featured-badge">Full time</span>
-                </p>
-                <p class="card-details">
-                    The Physics Programmer handles challenges related to implementing physics within the game engine
-                    – that is how things move, collide, react and so on. There is obviously a huge emphasis on
-                    mathematical skill. Sometimes Physics Programmers will be working on core tech (such as engine
-                    development) and not touching the game itself, other times they’ll be heavily involved in
-                    implementing core parts of the game.
-                </p>
-            </div>
-        </div>
-
-        <div class="mb-0.5 bg-dark-custom-surface">
-            <div class="card text-center">
-                <img src="{% static 'images/game_dev.jpg' %}" class="img-fluid">
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Tools Programmer</h6>
-                <p class="card-location">
-                    <i class="fa fa-map-marker job__location"></i>
-                    Job Location
-                    <span class="badge featured-badge">Full time</span>
-                </p>
-                <p class="card-details">
-                    The mandate of the Tools Programmer is to make life easier (usually that means “quicker”) for
-                    mainly Designers and Artists to create assets and implement them into the game. The tools that
-                    are created will vary greatly depending upon the nature of the project, the platform used,
-                    engine used, and so on with the consistent element being problem solving to support the team.
-                </p>
-            </div>
-        </div>
+        </div> -->
     </div>
-</div>
+  </div>
 </section>
 {% endblock %}
