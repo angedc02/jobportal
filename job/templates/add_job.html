@@ -4,10 +4,6 @@
 
 {% include 'recruiter_navigation.html' %}
 
-<marquee style="font-family: 'Monotype Corsiva'; font-size:25px; color:darkcyan; background-color:black; font-weight:bold; margin-top: 1%">
-    Add Job Details
-</marquee>
-<hr>
 <form class="container mt-5" onsubmit="return checkpass();" name="signup" method="post" enctype="multipart/form-data">
     {% csrf_token %}
 
@@ -63,6 +59,13 @@
 
     <div class="form-row">
         <div class="form-group col-md-12">
+            <label>Employee Type</label>
+            <input type="text" class="form-control" name="ft" placeholder="employee type" required>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-12">
             <label>Description</label>
             <textarea class="form-control" name="description" required></textarea>
         </div>
@@ -71,8 +74,6 @@
     <input type="submit" value="Submit" class="btn btn-primary my-3" style="width: 200px; ">
 
 </form>
-
-{% include 'footer.html' %}
 
 {% if error == "no" %}
 <script>
