@@ -1,47 +1,45 @@
 {% load static %}
-
 {% block body %}
-
 {% include 'navigation.html' %}
 
 <style>
-
-
+  body{
+    background-color: #F5F8FA;
+  }
+  .col-lg-6{
+      margin: max(15vh, 4rem) auto;
+    }
+  .box{
+    background-color: #fff;
+    margin-bottom: 2rem;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 0.7rem;
+  }
+  .btn-primary{
+    background-color: #1DA1F2;
+    color: #fff;
+    margin: 1rem 0;
+  }
 </style>
+<body>
+    <div class="col-lg-6">
+        <div class="box">
+            <form class="container mt-5" method="post" style="padding-top: 1rem;">
+                <h2 style=" text-align: center;">User Login</h2>
+                {% csrf_token %}
+                <label><b>Email ID</b></label>
+                <input type="email" class="form-control" name="uname" placeholder="Enter Email ID">
 
-<div class="col-lg-6 offset-3" style="display:flex; justify-content:center;">
-    <div class="box" style="margin-top:20px; margin-right:20px; border-radius:10px; 
-            width:550px; box-shadow: 5px 10px;
-            background-color: #1da1f2;"
-    >
-        <form class="container mt-5" method="post">
-            <h2 style=" text-align: center;
-                color: whitesmoke;">User Login</h2>
-            {% csrf_token %}
-            <label><b>Email ID</b></label>
-            <input type="email" class="form-control" name="uname" placeholder="Enter Email ID">
-
-            <label><b>Password</b></label>
-            <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
-
-            <input type="submit" value="Login" class="btn btn-primary" style="margin-top: 2%; color:white; background-color: black; height: 40px; margin-bottom: 30px;">
-            <a href="{% url 'user_signup'%}" class="btn btn-primary" style="margin-top: 2%; color:white; background-color: black; height: 40px;  margin-bottom: 30px;">CREATE AN ACCOUNT</a>
-        </form>
-
+                <label><b>Password</b></label>
+                <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
+                <div style="display: flex; justify-content: end; gap: 1rem;">
+                    <input type="submit" value="Login" class="btn btn-primary">
+                    <a href="{% url 'user_signup'%}" class="btn btn-primary">CREATE AN ACCOUNT</a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
-
-<!-- <form class="container mt-5" method="post">
-    {% csrf_token %}
-    <label><b>Email ID</b></label>
-    <input type="email" class="form-control" name="uname" placeholder="Enter Email ID">
-
-    <label><b>Password</b></label>
-    <input type="password" class="form-control" name="pwd" placeholder="Enter Password">
-
-    <input type="submit" value="Login" class="btn btn-primary" style="margin-top: 2%; color:darkcyan; background-color: black; height: 40px;">
-    <a href="{% url 'user_signup'%}" class="btn btn-primary" style="margin-top: 2%; color:darkcyan; background-color: black; height: 40px;">CREATE AN ACCOUNT</a>
-</form> -->
+</body>
 
 {% if error == "no" %}
 <script>

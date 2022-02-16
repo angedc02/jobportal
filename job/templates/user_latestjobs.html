@@ -1,14 +1,16 @@
 {% load static %}
-
 {% block body %}
-
 {% include 'user_navigation.html' %}
 
 <style>
     tr{text-align: center}
+    body{
+      background-color: #F5F8FA;
+    }
 </style>
 
-<div class="container" style="margin: 2rem auto;">
+<body>
+    <div class="container" style="margin: max(15vh, 4rem) auto;">
     <table class="table table-hover" id="example">
         <thead>
         <tr style="background-color: #343a40; color: white">
@@ -41,4 +43,6 @@
         </tbody>
     </table>
 </div>
+</body>
+
 {% endblock %}

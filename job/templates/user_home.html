@@ -1,14 +1,22 @@
 {% load static %}
-
 {% block body %}
-
 {% include 'user_navigation.html' %}
 
+<style>
+    body{
+      background-color: #F5F8FA;
+    }
+    .info-row{
+      margin-bottom: 2rem;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius: 0.7rem;
+    }
+</style>
 
-<div class="container">
-    <div class="row">
+<body>
+    <div class="container" style="margin: max(15vh, 4rem) auto;">
+    <div class="row info-row" style="background: #fff;">
         <div class="col-sm-6">
-
             <form class="container mt-5" name="signup" method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
@@ -37,7 +45,6 @@
                         <input type="text" class="form-control" name="email" value="{{student.user.username}}" readonly required>
                     </div>
                 </div>
-
 
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -68,22 +75,19 @@
                             </div>
                         {% endif %}
                     </div>
-
                     <div class="form-group col-md-6">
                         <label>Image</label>
                         <input type="file" class="form-control" name="image" accept="image/*">
                     </div>
                 </div>
-
-                <input type="submit" value="Submit" class="btn btn-primary my-3" style="width: 200px; ">
-
+                <input type="submit" value="Submit" class="btn my-3" style="background-color: #1DA1F2; color: #fff;">
             </form>
-        </div><!--col 1 end-->
-
-            <div class="col-sm-4 mt-5 text-center">
-                <img src="{{student.image.url}}" width="300px" height="300px">
+        </div>
+        <div class="col-sm-4 mt-5 text-center">
+            <div style="width: 100px; height: 100px;">
+                <img src="{{student.image.url}}" style="object-fit: cover; width: 100%; height: 100%; object-position: center; border-radius: 0.3rem;">
             </div>
-
+        </div>
     </div>
 </div>
 
@@ -99,5 +103,4 @@
     alert("Something went wrong, Try Again...");
 </script>
 {% endif %}
-
 {% endblock %}

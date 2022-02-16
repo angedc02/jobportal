@@ -1,8 +1,7 @@
 {% load static %} {% block body %} {% include 'navigation.html' %}
 
-  
 <style>
- 
+
 h1 {
   font-size:3em; 
   font-weight: 300;
@@ -102,22 +101,22 @@ h2 a {
 .container td:nth-child(4),
 .container th:nth-child(4) { display: none; }
 }
+
 </style>
 
-  <script>
+<script>
   window.console = window.console || function(t) {};
 </script>
 
-  
-  
-  <script>
+<script>
   if (document.location.search.match(/type=embed/gi)) {
     window.parent.postMessage("resize", "*");
   }
 </script>
 
-<div class="container table-responsive py-5">
-  <table class="table table-bordered table-hover">
+<body style="background-color: #F5F8FA">
+  <div class="container table-responsive py-5" style="padding-top: 0 !important; margin: max(15vh, 4rem) auto;">
+  <table class="table table-bordered table-hover latest-jobs-table">
     <thead class="thead-dark">
       <tr>
         <th>S.No.</th>
@@ -149,5 +148,5 @@ h2 a {
     </tbody>
   </table>
 </div>
-
+</body>
 {% endblock %}
